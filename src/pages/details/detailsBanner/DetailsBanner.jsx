@@ -64,7 +64,7 @@ const DetailsBanner = ({ video, crew }) => {
 
                   <div className="right">
                     <div className="title">
-                      {`${data.name || data.item} (${dayjs(
+                      {`${data.name || data.title} (${dayjs(
                         data.release_date
                       ).format("YYYY")})`}
                     </div>
