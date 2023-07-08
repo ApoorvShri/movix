@@ -19,7 +19,7 @@ import PosterFallback from "../../assets/no-poster.png";
 
 import "./style.scss";
 
-const Carousel = ({ data, loading, title }) => {
+const Carousel = ({ data, loading, endPoint, title }) => {
   const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -77,7 +77,9 @@ const Carousel = ({ data, loading, title }) => {
                 <div
                   key={item.id}
                   className="carouselItem"
-                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                  onClick={() =>
+                    navigate(`/${item.media_type || endPoint}/${item.id}`)
+                  }
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
